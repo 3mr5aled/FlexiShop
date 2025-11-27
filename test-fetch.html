@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Fetch</title>
+</head>
+<body>
+    <h1>Test Fetch</h1>
+    <div id="result"></div>
+
+    <script>
+        async function testFetch() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                resultDiv.innerHTML = 'Testing fetch...';
+                
+                // Test fetch from root
+                const response = await fetch('data/products.json');
+                resultDiv.innerHTML = `Fetch response status: ${response.status}<br>`;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML += `Success! Loaded ${data.length} products.<br>`;
+                    resultDiv.innerHTML += `First product: ${data[0].name}`;
+                } else {
+                    resultDiv.innerHTML += 'Response not OK';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                console.error(error);
+            }
+        }
+        
+        testFetch();
+    </script>
+</body>
+</html>

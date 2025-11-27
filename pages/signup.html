@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - FlexiShop</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">FlexiShop</a>
+        
+        <div class="delivery-location">
+          <span>Deliver to John</span>
+          <span>New York 10001</span>
+        </div>
+        
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="Search FlexiShop">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        
+        <ul class="nav-links">
+          <li>
+            <a href="signin.html">
+              <span>Hello, Sign in</span>
+              <span>Account & Lists</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>Returns</span>
+              <span>& Orders</span>
+            </a>
+          </li>
+        </ul>
+        
+        <a href="cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Sub Navigation -->
+  <div class="sub-nav">
+    <div class="container">
+      <div class="sub-nav-content">
+        <div class="menu-icon">
+          <i class="fas fa-bars"></i> All
+        </div>
+        <ul class="sub-nav-links">
+          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Registry</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Sell</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Section -->
+  <section class="container">
+    <div class="signup-container">
+      <div class="signin-logo">
+        <a href="../index.html" class="logo">FlexiShop</a>
+      </div>
+      
+      <div class="signup-form">
+        <h1>Create account</h1>
+        
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" required>
+            <div class="password-hint">
+              Passwords must be at least 6 characters.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password-confirm">Re-enter password</label>
+            <input type="password" id="password-confirm" class="form-control" required>
+          </div>
+          
+          <button type="submit" class="signin-btn">Create your FlexiShop account</button>
+        </form>
+        
+        <div class="legal-text">
+          By creating an account, you agree to FlexiShop's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+        </div>
+      </div>
+      
+      <div class="signin-divider">
+        <hr>
+        <span>Already have an account?</span>
+        <hr>
+      </div>
+      
+      <div class="create-account">
+        <a href="signin.html" class="btn secondary-btn">Sign in</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Get to Know Us</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About FlexiShop</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">FlexiShop Devices</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Make Money with Us</h3>
+          <ul>
+            <li><a href="#">Sell products on FlexiShop</a></li>
+            <li><a href="#">Sell on FlexiShop Business</a></li>
+            <li><a href="#">Become an Affiliate</a></li>
+            <li><a href="#">Advertise Your Products</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>FlexiShop Payment Products</h3>
+          <ul>
+            <li><a href="#">FlexiShop Business Card</a></li>
+            <li><a href="#">Shop with Points</a></li>
+            <li><a href="#">Reload Your Balance</a></li>
+            <li><a href="#">FlexiShop Currency Converter</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Let Us Help You</h3>
+          <ul>
+            <li><a href="#">FlexiShop and COVID-19</a></li>
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Your Orders</a></li>
+            <li><a href="#">Shipping Rates & Policies</a></li>
+            <li><a href="#">Returns & Replacements</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 1996-2023, FlexiShop.com, Inc. or its affiliates</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/signup.js"></script>
+  <script src="../js/user.js"></script>
+</body>
+</html>

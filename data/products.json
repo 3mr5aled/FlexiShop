@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "price": 89.99,
+    "category": "Electronics",
+    "brand": "SoundMax",
+    "image": "assets/images/placeholder.svg",
+    "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life.",
+    "rating": 4.5,
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Smart Fitness Watch",
+    "price": 149.99,
+    "category": "Wearables",
+    "brand": "FitTech",
+    "image": "assets/images/placeholder.svg",
+    "description": "Track your heart rate, sleep, and daily activity with this advanced smartwatch.",
+    "rating": 4.2,
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Organic Cotton T-Shirt",
+    "price": 24.99,
+    "category": "Clothing",
+    "brand": "EcoWear",
+    "image": "assets/images/placeholder.svg",
+    "description": "Comfortable and sustainable t-shirt made from 100% organic cotton.",
+    "rating": 4.7,
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Stainless Steel Water Bottle",
+    "price": 19.99,
+    "category": "Home",
+    "brand": "HydroFlow",
+    "image": "assets/images/placeholder.svg",
+    "description": "Keep your drinks cold for 24 hours or hot for 12 hours with this durable bottle.",
+    "rating": 4.3,
+    "inStock": false
+  },
+  {
+    "id": 5,
+    "name": "Wireless Charging Pad",
+    "price": 34.99,
+    "category": "Electronics",
+    "brand": "ChargePro",
+    "image": "assets/images/placeholder.svg",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+    "rating": 4.0,
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Leather Wallet",
+    "price": 45.99,
+    "category": "Accessories",
+    "brand": "TanLeather",
+    "image": "assets/images/placeholder.svg",
+    "description": "Genuine leather wallet with multiple card slots and cash compartment.",
+    "rating": 4.8,
+    "inStock": true
+  }
+]

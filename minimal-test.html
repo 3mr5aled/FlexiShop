@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimal Test</title>
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Product Test</h1>
+    <div id="products-container">Loading...</div>
+
+    <script>
+        async function loadAndDisplayProducts() {
+            try {
+                console.log('Loading products...');
+                const response = await fetch('data/products.json');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const products = await response.json();
+                console.log('Products loaded:', products);
+                
+                const container = document.getElementById('products-container');
+                container.innerHTML = products.map(product => `
+                    <div class="product-card">
+                        <h3>${product.name}</h3>
+                        <p>Price: $${product.price}</p>
+                        <button onclick="console.log('Add to cart:', ${product.id})">Add to Cart</button>
+                    </div>
+                `).join('');
+                
+                console.log('Products displayed');
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('products-container').innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        // Load products when page loads
+        document.addEventListener('DOMContentLoaded', loadAndDisplayProducts);
+    </script>
+</body>
+</html>

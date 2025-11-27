@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Products Loading</title>
+</head>
+<body>
+    <h1>Testing Products Loading</h1>
+    <div id="result"></div>
+
+    <script>
+        async function testProductsLoading() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // Test loading products from the root path
+                let response = await fetch('data/products.json');
+                if (!response.ok) throw new Error('Failed to load from root path');
+                
+                const products = await response.json();
+                resultDiv.innerHTML = `<p style="color: green;">Success! Loaded ${products.length} products from root path.</p>`;
+                console.log('Products from root path:', products);
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: orange;">Root path failed: ${error.message}. Trying alternative path...</p>`;
+                console.log('Root path error:', error);
+                
+                try {
+                    // Test loading products from the pages path
+                    let response = await fetch('../data/products.json');
+                    if (!response.ok) throw new Error('Failed to load from pages path');
+                    
+                    const products = await response.json();
+                    resultDiv.innerHTML += `<p style="color: green;">Success! Loaded ${products.length} products from pages path.</p>`;
+                    console.log('Products from pages path:', products);
+                } catch (error) {
+                    resultDiv.innerHTML += `<p style="color: red;">Both paths failed: ${error.message}</p>`;
+                    console.log('Pages path error:', error);
+                }
+            }
+        }
+        
+        testProductsLoading();
+    </script>
+</body>
+</html>

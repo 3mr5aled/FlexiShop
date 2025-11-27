@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Image Test</title>
+</head>
+<body>
+    <h1>SVG Image Test</h1>
+    
+    <h2>Testing SVG image paths:</h2>
+    <p>Current page path: <span id="page-path"></span></p>
+    
+    <h3>SVG image from root path (assets/images/placeholder.svg):</h3>
+    <img id="root-image" src="assets/images/placeholder.svg" alt="Root SVG image" style="width: 200px; height: 200px; border: 1px solid #ccc;">
+    <p id="root-status">Loading...</p>
+    
+    <h3>SVG image from pages path (../assets/images/placeholder.svg):</h3>
+    <img id="pages-image" src="../assets/images/placeholder.svg" alt="Pages SVG image" style="width: 200px; height: 200px; border: 1px solid #ccc;">
+    <p id="pages-status">Loading...</p>
+    
+    <script>
+        document.getElementById('page-path').textContent = window.location.pathname;
+        
+        // Test root image
+        const rootImage = document.getElementById('root-image');
+        rootImage.onload = () => {
+            document.getElementById('root-status').innerHTML = '<span style="color: green;">✓ Loaded successfully</span>';
+        };
+        rootImage.onerror = () => {
+            document.getElementById('root-status').innerHTML = '<span style="color: red;">✗ Failed to load</span>';
+        };
+        
+        // Test pages image
+        const pagesImage = document.getElementById('pages-image');
+        pagesImage.onload = () => {
+            document.getElementById('pages-status').innerHTML = '<span style="color: green;">✓ Loaded successfully</span>';
+        };
+        pagesImage.onerror = () => {
+            document.getElementById('pages-status').innerHTML = '<span style="color: red;">✗ Failed to load</span>';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug FlexiShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Debug FlexiShop</h1>
+    <div id="status">Loading...</div>
+    <div id="products-container"></div>
+
+    <script>
+        async function debugProducts() {
+            const statusDiv = document.getElementById('status');
+            const container = document.getElementById('products-container');
+            
+            try {
+                statusDiv.innerHTML = 'Loading products...';
+                console.log('Attempting to load products...');
+                
+                // Try to load products
+                const response = await fetch('data/products.json');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const products = await response.json();
+                console.log('Products loaded:', products);
+                
+                statusDiv.innerHTML = `Success! Loaded ${products.length} products.`;
+                
+                // Try to render products
+                if (products.length > 0) {
+                    container.innerHTML = products.map(product => `
+                        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+                            <h3>${product.name}</h3>
+                            <p>Price: $${product.price}</p>
+                            <p>Category: ${product.category}</p>
+                        </div>
+                    `).join('');
+                    statusDiv.innerHTML += '<br>Products rendered to page.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        // Run the debug function when page loads
+        window.addEventListener('DOMContentLoaded', debugProducts);
+    </script>
+</body>
+</html>
